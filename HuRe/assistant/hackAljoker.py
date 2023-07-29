@@ -1,5 +1,5 @@
 
-from HuRe import bot, l313l
+from HuRe import bot, sthon
 #By Source sedthon @E9N99
 from telethon import events, functions, types, Button
 from datetime import timedelta
