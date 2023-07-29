@@ -13,7 +13,7 @@ from telethon.events import CallbackQuery
 from telethon.utils import get_attributes
 from wget import download
 
-from HuRe import l313l
+from HuRe import sthon
 
 from ..Config import Config
 from ..core import check_owner, pool
@@ -39,7 +39,7 @@ PATH = "./HuRe/cache/ytsearch.json"
 plugin_category = "bot"
 
 
-@l313l.ar_cmd(
+@sthon.ar_cmd(
     pattern="اغنيه(?:\s|$)([\s\S]*)",
     command=("اغنيه", plugin_category),
     info={
@@ -86,7 +86,7 @@ async def iytdl_inline(event):
         await catevent.edit("**▾∮ عذرًا لم أستطيع ايجاد اي نتائج! ✘**")
 
 
-@l313l.tgbot.on(
+@sthon.tgbot.on(
     CallbackQuery(
         data=re.compile(b"^ytdl_download_(.*)_([\d]+|mkv|mp4|mp3)(?:_(a|v))?")
     )
@@ -183,7 +183,7 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
     )
 
 
-@l313l.tgbot.on(
+@sthon.tgbot.on(
     CallbackQuery(data=re.compile(b"^ytdl_(listall|back|next|detail)_([a-z0-9]+)_(.*)"))
 )
 @check_owner
