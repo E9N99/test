@@ -17,7 +17,7 @@ else:
     session = "HuRe"
 
 try:
-    l313l = HuReClient(
+    sthon = HuReClient(
         session=session,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
