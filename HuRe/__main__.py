@@ -3,7 +3,7 @@ import HuRe
 from HuRe import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
 from .Config import Config
 from .core.logger import logging
-from .core.session import l313l
+from .core.session import sthon
 from .utils import (
     add_bot_to_logger_group,
     install_externalrepo,
@@ -25,7 +25,7 @@ cmdhr = Config.COMMAND_HAND_LER
 
 try:
     LOGS.info("جارِ بدء بوت سيدثون ✓")
-    l313l.loop.run_until_complete(setup_bot())
+    sthon.loop.run_until_complete(setup_bot())
     LOGS.info("تم اكتمال تنصيب البوت ✓")
 except Exception as e:
     LOGS.error(f"{str(e)}")
@@ -33,7 +33,7 @@ except Exception as e:
 
 try:
     LOGS.info("يتم تفعيل وضع الانلاين")
-    l313l.loop.run_until_complete(mybot())
+    sthon.loop.run_until_complete(mybot())
     LOGS.info("تم تفعيل وضع الانلاين بنجاح ✓")
 except Exception as jep:
     LOGS.error(f"- {jep}")
@@ -75,16 +75,16 @@ async def externalrepo():
     if Config.VCMODE:
         await install_externalrepo("https://github.com/jepthoniq/JepVc", "jepvc", "jepthonvc")
 
-l313l.loop.run_until_complete(externalrepo())
-l313l.loop.run_until_complete(startup_process())
+sthon.loop.run_until_complete(externalrepo())
+sthon.loop.run_until_complete(startup_process())
 
 if len(sys.argv) not in (1, 3, 4):
-    l313l.disconnect()
+    sthon.disconnect()
 elif not Catcheck.sucess:
     if HEROKU_APP is not None:
         HEROKU_APP.restart()
 else:
     try:
-        l313l.run_until_disconnected()
+        sthon.run_until_disconnected()
     except ConnectionError:
         pass
