@@ -4,7 +4,7 @@ import heroku3
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import l313l
+from .core.session import sthon
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.1.3"
@@ -15,7 +15,7 @@ __copyright__ = "BiLaL TEAM (C) 2021 - 2023  " + __author__
 l313l.version = __version__
 l313l.tgbot.version = __version__
 LOGS = logging.getLogger("E9N99")
-bot = l313l
+bot = sthon
 
 StartTime = time.time()
 JEPVERSION = "3.1.3"
