@@ -4,10 +4,10 @@ import re
 
 from telethon.events import CallbackQuery
 
-from HuRe import l313l
+from HuRe import sthon
 
 
-@l313l.tgbot.on(CallbackQuery(data=re.compile(b"rzan_(.*)")))
+@sthon.tgbot.on(CallbackQuery(data=re.compile(b"rzan_(.*)")))
 async def on_plug_in_callback_query_handler(event):
     timestamp = int(event.pattern_match.group(1).decode("UTF-8"))
     if os.path.exists("./HuRe/secrets.txt"):
